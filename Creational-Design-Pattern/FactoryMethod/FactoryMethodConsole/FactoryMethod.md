@@ -1,0 +1,2 @@
+### Factory Method design Pattern
+A real-world factory produces products. In programming, a factory creates objects. When a method creates and returns an object, it is called a factory method.  In an ASP.NET Core application, the Factory Method pattern can be used to encapsulate the object creation process and provide a flexible way to create instances of different classes based on specific conditions or configurations.
