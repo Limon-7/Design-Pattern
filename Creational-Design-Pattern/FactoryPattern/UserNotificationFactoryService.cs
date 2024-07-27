@@ -1,15 +1,7 @@
-﻿using System;
+using System;
 
-namespace FactoryMethodConsole
+namespace FactoryPattern
 {
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
-           var deleveryService = new DeliverService(new NotificationFactoryService());
-           deleveryService.Shipment(NotifierType.Phone);
-        }
-    }
 
     /// <summary>
     /// Product Interface
@@ -44,7 +36,7 @@ namespace FactoryMethodConsole
     /// <summary>
     /// Creator that creates derived or product class's object
     /// </summary>
-    public class NotificationFactoryService
+    public class UserNotificationFactoryService
     {
         public IUserNotifier UserNotifier(NotifierType type)
         {
@@ -56,12 +48,12 @@ namespace FactoryMethodConsole
             }
         }
     }
-    
+
     // client code
     public class DeliverService
     {
-        private readonly NotificationFactoryService service;
-        public DeliverService(NotificationFactoryService service)
+        private readonly UserNotificationFactoryService service;
+        public DeliverService(UserNotificationFactoryService service)
         {
             this.service = service;
         }
